@@ -1,0 +1,13 @@
+prefix=/home/xen/x/c/uni/dma/flask/app/venv
+exec_prefix=/home/xen/x/c/uni/dma/flask/app/venv
+libdir=/home/xen/x/c/uni/dma/flask/app/venv/lib
+sharedlibdir=/home/xen/x/c/uni/dma/flask/app/venv/lib
+includedir=/home/xen/x/c/uni/dma/flask/app/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
