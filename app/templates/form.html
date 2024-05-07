@@ -5,11 +5,13 @@
 <h2>Data Science Salary Predictor</h2>
 
 <form action="{{ url_for('form') }}" method="post">
+	<p>Job rating (satisfaction level)</p>
     <input type="text" name="Rating" placeholder="Job Rating (out of 5)" required="required" />
     <br>
+	<p>Your Age</p>
     <input type="text" name="Age" placeholder="Age" required="required" />
     <br>
-    <p>SKILLS - answer in 1(yes) or 0(no)</p>
+    <p>SKILLS known</p>
     <input type="checkbox" name="Python" value="1"> Python
     <br>
     <input type="checkbox" name="spark" value="1"> Spark
@@ -32,5 +34,5 @@
     <br>
     <br>
 
-    <b>Salary (Thousand Dollars) : <span style="color:red;">{{result}}</span></b>
+    <b>Salary (Thousand Dollars) : <span>{{result}}</span></b>
 </form>
