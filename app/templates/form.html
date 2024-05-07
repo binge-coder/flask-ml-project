@@ -1,36 +1,36 @@
 <head>
-	<link rel="stylesheet" href="../static/styles/mystyle.css">
+    <link rel="stylesheet" href="../static/styles/mystyle.css">
 </head>
 
 <h2>Data Science Salary Predictor</h2>
 
 <form action="{{ url_for('form') }}" method="post">
-	<input type="text" name="Rating" placeholder="Job Rating (out of 5)" required="required" />
-	<br>
-	<input type="text" name="Age" placeholder="Age" required="required" />
-	<br>
-	<p>SKILLS - answer in 1(yes) or 0(no)</p>
-	<input type="text" name="Python" placeholder="Python" required="required" />
-	<br>
-	<input type="text" name="spark" placeholder="Spark" required="required" />
-	<br>
-	<input type="text" name="aws" placeholder="AWS" required="required" />
-	<br>
-	<input type="text" name="excel" placeholder="Excel" required="required" />
-	<br>
-	<input type="text" name="sql" placeholder="SQL" required="required" />
-	<br>
-	<input type="text" name="scikit" placeholder="Scikit Learn" required="required" />
-	<br>
-	<input type="text" name="tensor" placeholder="TensorFlow" required="required" />
-	<br>
-	<input type="text" name="tableau" placeholder="Tableau" required="required" />
-	<br>
-	<br>
+    <input type="text" name="Rating" placeholder="Job Rating (out of 5)" required="required" />
+    <br>
+    <input type="text" name="Age" placeholder="Age" required="required" />
+    <br>
+    <p>SKILLS - answer in 1(yes) or 0(no)</p>
+    <input type="checkbox" name="Python" value="1"> Python
+    <br>
+    <input type="checkbox" name="spark" value="1"> Spark
+    <br>
+    <input type="checkbox" name="aws" value="1"> AWS
+    <br>
+    <input type="checkbox" name="excel" value="1"> Excel
+    <br>
+    <input type="checkbox" name="sql" value="1"> SQL
+    <br>
+    <input type="checkbox" name="scikit" value="1"> Scikit Learn
+    <br>
+    <input type="checkbox" name="tensor" value="1"> TensorFlow
+    <br>
+    <input type="checkbox" name="tableau" value="1"> Tableau
+    <br>
+    <br>
 
-	<button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT</button>
-	<br>
-	<br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT</button>
+    <br>
+    <br>
 
-	<b>Salary (Thousand Dollars) : <span style="color:red;">{{result}}</span></b>
+    <b>Salary (Thousand Dollars) : <span style="color:red;">{{result}}</span></b>
 </form>
