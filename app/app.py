@@ -25,9 +25,12 @@ def form():
         tableau = 1 if 'tableau' in request.form else 0
 
         features = np.array([[Rating, Age, Python, spark, aws, excel, sql, scikit, tensor, tableau]])
-        salary = model.predict(features)
+        # salary = model.predict(features)
+        salary = model.predict(features)[0]
+        formatted_salary = "{:.2f}".format(salary)
+        return render_template('form.html', result=formatted_salary)
 
-        return render_template('form.html', result=salary)
+        # return render_template('form.html', result=salary)
 
 if __name__ == '__main__':
     app.run(debug=True)
