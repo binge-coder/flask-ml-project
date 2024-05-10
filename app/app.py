@@ -6,12 +6,15 @@ model = pickle.load(open('model.pkl','rb'))
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return render_template("form.html")
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    if request.method=='GET':
-        return render_template('form.html')
-    else:
+    result = ""  # Initialize result as an empty string
+
+    if request.method == 'POST':
         Rating = float(request.form['Rating'])
         Age = float(request.form['Age'])
         # Convert checkbox values to 1 if checked, 0 otherwise
@@ -25,12 +28,12 @@ def form():
         tableau = 1 if 'tableau' in request.form else 0
 
         features = np.array([[Rating, Age, Python, spark, aws, excel, sql, scikit, tensor, tableau]])
-        # salary = model.predict(features)
         salary = model.predict(features)[0]
         formatted_salary = "{:.2f}".format(salary)
         return render_template('form.html', result=formatted_salary)
 
-        # return render_template('form.html', result=salary)
+    # For GET request, return the form template with initial result as ""
+    return render_template('form.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
